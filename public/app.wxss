@@ -1,0 +1,24 @@
+/**app.wxss**/
+page{
+ height: 100%;
+}
+.container {
+  margin: 0 auto;
+  height: 100%;
+} 
+
+.userinfo-avatar {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+}
+.userinfo-avatar-big {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 5rpx;
+}
+.text-overflow-hide{
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}

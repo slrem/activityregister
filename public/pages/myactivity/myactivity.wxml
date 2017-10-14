@@ -1,0 +1,33 @@
+<!--myactivity.wxml-->
+<view class="container">
+  <view wx:if="{{loadding==true}}">
+    <view style="padding:50rpx;text-align:center">
+      <image mode="aspectFit" style="width:160px;" src="../resources/loadding.gif"></image>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:if="{{activities!=null}}">
+      <view wx:for="{{activities}}"  wx:key="{{index}}">
+        <view class="myactivities_listitem" bindtap="hrefDetail" id="{{item.ID}}">
+          <view style="flex:1;text-align:center;padding-top:46rpx;">
+            <image src="{{item.Avatarurl}}" class="userinfo-avatar" background-size="cover"></image>
+          </view>
+          <view style="flex:3;padding-top:40rpx;padding-right:20rpx;">
+            <text style="font-size: 39rpx;color:#010101"> {{item.Title}}</text> 
+            <view style="font-size: 25rpx;color:#828383;margin-top:24rpx;">{{item.SatrtTime}}</view>
+          </view>
+          <view style="flex:1;padding-top:35rpx;">
+            <view wx:if="{{item.State==-1}}" style="color:#F64B30;text-align:center;padding: 40rpx 0 0 0;font-size: 25rpx;">(活动取消)</view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view style="line-height:160rpx;text-align:center;padding-top:180rpx;font-family:'幼圆';">
+        <text>你还没参加活动呢\n赶紧约上你的小伙伴吧</text>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,50 @@
+<!--issueactivity.wxml-->
+<view class="container">
+
+  <view wx:if="{{activities.length!=0}}">
+    <view wx:for="{{activities}}" wx:key="{{index}}"
+      bindtouchstart="touchS" bindtouchmove="touchM"
+      data-index="{{index}}" style="border-bottom: 1px solid #ddd;height: {{initHeight}};position:relative;z-index:999">
+
+          <view style="display:inline-block;width:100%;height:{{initHeight}};vertical-align: bottom;transform:translateX({{item.translateX}});background:#fff;z-index:999;position:relative;transition: all 350ms ease-out ;" bindtap="hrefDetail" id="{{item.ID}}">
+
+            <view style="display:inline-block;width:100%;height:{{initHeight}};vertical-align: bottom">
+              <view style="display:flex;">
+                <view style="flex:1;text-align:center;padding-top:46rpx;">
+                  <image src="{{item.Avatarurl}}" class="userinfo-avatar" background-size="cover"></image>
+                </view>
+                <view style="flex:3;padding-top:40rpx;padding-right:20rpx;" class="text-overflow-hide">
+                  <text style="font-size: 39rpx;color:#010101"> {{item.Title}}</text> 
+                  <view style="font-size: 25rpx;color:#828383;margin-top:24rpx;">{{item.SatrtTime}}</view>
+                </view>
+                
+                <view style="flex:1;padding-top:35rpx;">
+                  <view wx:if="{{item.State==-1}}" style="color:#F64B30;text-align:center;padding: 40rpx 0 0 0;font-size: 25rpx;">(活动取消)</view>
+                </view>
+              
+              </view>
+            </view>
+
+          </view>
+
+        <view style="display:inline-block;width:{{cancelbtnWidth}};line-height:{{initHeight}};background:#F74C31;color:#FFFAF9;position:absolute;right:0;z-index:0;text-align:center" bindtap="cancelActivity" id="{{item.ID}}">取消</view>
+        
+
+          
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:if="{{templActivities=='loadding'}}">
+      <view style="padding:50rpx;text-align:center">
+         <image mode="aspectFit" style="width:160px;" src="../resources/loadding.gif"></image>
+      </view>
+    </view>
+    <view wx:else>
+        <view style="padding-top:120rpx;text-align:center;font-family:'幼圆';">{{templActivities}}</view>
+    </view>
+  </view>
+
+
+
+  <view class="activityregister_button"  bindtap="activityRegisterclick">+</view>
+</view>

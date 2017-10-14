@@ -1,0 +1,42 @@
+/* planactivity.wxss */
+.container{
+  background:#FBF9FE;
+}
+.planactivity_form{
+  background:#FBF9FE;
+  height: 100%;
+  display: flex;
+  flex-direction: column
+}
+.planactivity_form_item{
+  margin: 40rpx 0 60rpx 0;
+}
+.planactivity_form_item:last-child{
+  margin:0;
+}
+.planactivity_input,.planactivity_textarea,.planactivity__picker{
+  margin: 12rpx;
+  border:1px solid #eee;
+  background:#fff;
+  border-radius:5px;
+  padding: 12rpx 18rpx 12rpx 24rpx;
+  width: 530rpx;
+}
+.planactivity_form_text{
+  margin: 0 0 30rpx 0;
+}
+.planactivity_textarea{
+  width: 600rpx;
+  height:180rpx;
+}
+.planactivity__picker{
+  background: #fff;
+  width: 600rpx;
+  display: flex;
+  border: none;
+  line-height: 70rpx;
+}
+.planactivity__picker_item{
+  flex: 1;
+   text-align: center
+}

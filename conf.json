@@ -1,0 +1,6 @@
+{
+	"db": "root:******@tcp(192.168.00.00:3306)/dbweplay?charset=utf8",
+	"appid":"wxe3ed33dc7f80xxxx",
+	"secret":"ed9abcd852xxxxxxxbab6d2626c8"
+
+}

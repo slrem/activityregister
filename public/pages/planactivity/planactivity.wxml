@@ -1,0 +1,41 @@
+<!--planactivity.wxml-->
+<view class="container">
+  <view class="planactivity_form">
+    <form bindsubmit="formSubmit" style="padding:32rpx;">
+
+      <view class="planactivity_form_item">
+        <view class="planactivity_form_text">活动标题<text style="font-size:24rpx;margin-left:48rpx;color:#D34D4D">{{emptyTitle}}</text></view>
+        <input name="activityname" class="planactivity_input" placeholder="发起活动"/>
+      </view>
+
+      <view class="planactivity_form_item">
+        <view class="planactivity_form_text">活动内容</view>
+        <textarea name="activitycontainer" class="planactivity_textarea" placeholder="活动详情，方案。。。"/>
+      </view>
+    
+     <view class="planactivity_form_item">
+        <view class="planactivity_form_text">活动时间</view>
+        <view class="planactivity__picker">
+          <view class="planactivity__picker_item">
+            <picker mode="date" value="{{activedate}}" bindchange="bindActivedateChange">
+              <view>
+                {{activedate}}
+              </view>
+            </picker>
+          </view>
+          <view class="planactivity__picker_item">
+            <picker mode="time" value="{{activetime}}" bindchange="bindActiveTimeChange">
+              <view>
+                {{activetime}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+     <view class="planactivity_form_item">
+      <button formType="submit" type="primary">发布活动</button>
+     </view>
+
+    </form>
+  </view>
+</view>

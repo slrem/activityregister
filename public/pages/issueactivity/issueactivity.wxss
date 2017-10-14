@@ -1,0 +1,21 @@
+/* issueactivity.wxss */
+.activityregister_button{
+  position:fixed;
+  bottom:30rpx;
+  right:30rpx;
+  border-radius:50%;
+  width: 115rpx;
+  height: 115rpx;
+  line-height: 115rpx;
+  background: #2196F3;
+  color:#ffffff;
+
+  text-align: center;
+  font-size: 75rpx;
+  font-weight: 800;
+
+  z-index: 9999;
+}
+.activityregister_button:active{
+  background:#52A7EA;
+}

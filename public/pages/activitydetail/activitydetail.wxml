@@ -1,0 +1,68 @@
+<!--activitydetail.wxml-->
+<view class="container">
+  <view class="activitydetails_body">
+    
+    <view wx:if="{{activityDetails.ID}}">
+    
+      <view class="activitydetails_container">
+        <view style="display:flex">
+          <view style="flex:1;margin-top:24rpx;">
+            <image class="userinfo-avatar-big" src="{{activityDetails.HeadUrl}}" background-size="cover" ></image>
+          </view>
+
+          <view style="flex:3;margin-top:12rpx;margin-left:36rpx;">
+            <view class="activityDetails_title text-overflow-hide" style="width:500rpx;">{{activityDetails.Title}}\n</view>
+            <view class="activityDetails_nickname text-overflow-hide" style="width:300rpx;margin-top:36rpx;">{{activityDetails.Originator}}</view>
+          </view>
+        </view>
+
+        <view class="activityDetails_description">{{activityDetails.Description}}</view>
+        
+          <view wx:if="{{activityDetails.PersonnelNum==0}}">
+            <view style="text-align:center; padding:36rpx 0;">
+              点击右上角，约上你的小伙伴吧
+            </view>
+          </view>
+          <view wx:else class="activityDetails_member">
+              <view wx:for="{{activityDetails.Personnel}}" wx:key="Uid" class="activityDetails_member_list">
+                <image src="{{item.AvatarUrl}}" class="userinfo-avatar" background-size="cover"></image>
+                <view class="activityDetails_member_nickname">{{item.NickName}}</view>
+              </view>
+
+          </view>
+
+        <view class="activityDetails_time">
+          活动时间：{{activityDetails.ActivityStartTime}}
+          
+          <view wx:if="{{activityDetails.nowGap>0}}" style="color:#F74C31;margin-top:16rpx;">(活动过期)</view>
+          <view wx:else>
+            <view wx:if="{{activityDetails.State==-1}}" style="color:#F74C31;margin-top:16rpx;">(活动已取消)</view>
+          </view>
+          
+        </view>
+      </view>
+      
+      <view wx:if="{{activityDetails.State==0&&activityDetails.nowGap<0}}" class="activityDetails_btn">
+      
+        <view wx:if="{{activityDetails.IsJoin ==1 }}">
+          <button type="warn" bindtap="cancelJoin" id="{{activityDetails.ID}}"> 取消报名 </button>
+        </view>
+
+        <view wx:elif="{{activityDetails.IsJoin ==0 }}">
+          <form bindsubmit="joinActive" report-submit="true" id="{{activityDetails.ID}}">
+            <button formType="submit" type="primary"> 报名参加 </button>
+          </form>
+        </view>
+
+      </view>
+    
+    </view>
+
+    <view wx:else>
+       <view style="padding:50rpx;text-align:center">
+        <image mode="aspectFit" style="width:160px;" src="../resources/loadding.gif"></image>
+      </view>
+    </view>
+      
+  </view>
+</view>

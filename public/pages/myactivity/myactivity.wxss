@@ -1,0 +1,8 @@
+
+/* myactivity.wxss */
+.myactivities_listitem{
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 180rpx;
+  display: flex;
+}

@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/issueactivity/issueactivity",
+    "pages/myactivity/myactivity",
+   
+    
+    "pages/planactivity/planactivity",
+    "pages/activitydetail/activitydetail"
+   
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#53C4FE",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#fcfcfc",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "backgroundColor": "#44BFFA",
+    "list": [
+      {
+        "pagePath": "pages/myactivity/myactivity",
+        "text": "我的活动",
+        "iconPath": "images/2_white.png",
+        "selectedIconPath": "images/2_select_white.png"
+      },
+        {
+          "pagePath": "pages/issueactivity/issueactivity",
+          "text": "发布活动",
+          "iconPath": "images/1_white.png",
+          "selectedIconPath": "images/1_select_white.png"
+        }
+    ]
+  }
+}
